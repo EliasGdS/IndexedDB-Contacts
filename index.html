@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <title>Contatos</title>
+</head>
+
+<body>
+
+    <header id="page-header" class="primary-header">
+        <span>
+            <i class="fas fa-database fa-9x"></i>
+        </span>
+        <h1>IndexedDB</h1>
+    </header>
+
+    <section id="container">
+        <article id="new-contact-inputs" class="sec-container">
+            <header id="new-contact-header" class="secundary-header">
+                <span>
+                    <i class="fas fa-address-card fa-6x"></i>
+                </span>
+                <h2>Criar</h2>
+            </header>
+
+            <form action="">
+                <div>
+                    <input type="text" name="in-contact-name" id="in-contact-name" placeholder="Nome"
+                        required="required">
+                    <input type="email" name="in-contact-email" id="in-contact-email" placeholder="Email"
+                        required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                        title="Exemplo: eliasorsilia@gmail.com">
+
+                    <input type="tel" name="in-contact-phone" id="in-contact-phone" placeholder="Número de contato"
+                        oninvalid="setCustomValidity('Número incompleto.')">
+                </div>
+
+                <input type="submit" id="btn-save" name="save" value="Salvar">
+            </form>
+        </article>
+
+        <article id="contact-db" class="sec-container">
+            <header id="contact-db-header" class="secundary-header">
+                <span>
+                    <i class="fas fa-list-ul fa-6x"></i>
+                </span>
+                <h2>Contatos Salvos</h2>
+            </header>
+
+            <div id="container-manipulate-db">
+                <div>
+                    <input type="text" name="in-search" id="in-search" placeholder="Nome">
+                    <input type="button" id="btn-search" value="Pesquisar" onclick="searchDB()">
+                </div>
+                <div>
+                    <input type="button" id="btn-all-load" value="Carregar Tudo" onclick="searchAll()">
+                    <input type="button" id="btn-all-delete" value="Deletar Tudo" onclick="clearDB()">
+                </div>
+            </div>
+
+            <div id="container-contacts">
+                <table id ="contacts-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Número de Contato</th>
+                            <th id="th-delete"><i class="fas fa-trash-alt fa-xs"></i></th>
+                        </tr>
+                    </thead>
+                    <div id='scrooldiv'>
+                    <tbody></tbody>
+                </div>
+                </table>
+            </div>
+        </article>
+    </section>
+
+    <footer>
+        <p>Made whit 💜 by Elias Gomes da Silva <a href="https://github.com/EliasGdS/Countdown-Timer"
+                target="_blank"><img src="https://i.pinimg.com/originals/b1/5e/ed/b15eedbdafbbdbca3249e3942f4faf3b.png"
+                    width="20px"></a> </p>
+    </footer>
+
+    <script lang="javascript" src="main.js"></script>
+    <script lang="javascript" src="indexedbd.js"></script>
+
+
+</body>
+
+</html>
